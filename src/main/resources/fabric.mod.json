@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "powerporker",
+  "version": "${version}",
+
+  "name": "Power Porker",
+  "description": "Significantly buffs pigs as transport",
+  "authors": [
+    "SFort"
+  ],
+  "contact": {
+    "sources": "https://github.com/SFort/MC-powerporker"
+  },
+
+  "license": "MIT",
+
+  "environment": "*",
+  "mixins": [
+    "powerporker.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "*"
+  }
+}
