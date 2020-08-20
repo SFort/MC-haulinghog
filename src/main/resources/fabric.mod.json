@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "id": "powerporker",
+  "id": "haulinghog",
   "version": "${version}",
 
-  "name": "Power Porker",
+  "name": "Hauling Hog",
   "description": "Significantly buffs pigs as transport",
   "authors": [
     "SFort"
   ],
   "contact": {
-    "sources": "https://github.com/SFort/MC-powerporker"
+    "sources": "https://github.com/SFort/MC-haulinghog"
   },
 
   "license": "MIT",
 
   "environment": "*",
   "mixins": [
-    "powerporker.mixins.json"
+    "haulinghog.mixins.json"
   ],
 
   "depends": {
