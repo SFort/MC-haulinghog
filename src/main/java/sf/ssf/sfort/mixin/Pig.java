@@ -1,26 +1,20 @@
 package sf.ssf.sfort.mixin;
 
-import jdk.vm.ci.code.site.Call;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Packet;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
-import org.apache.commons.lang3.concurrent.CallableBackgroundInitializer;
 import org.spongepowered.asm.mixin.Dynamic;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -48,8 +42,8 @@ public abstract class Pig extends net.minecraft.entity.Entity{
 	}
 	@Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
 	private void interact(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> info) {
-		info.setReturnValue(ActionResult.SUCCESS);
 		if (player.isSneaking()) {
+			info.setReturnValue(ActionResult.SUCCESS);
 			if (cargo ==null) {
 				if (player.inventory.getMainHandStack().getItem().equals(Items.CHEST)) {
 					player.inventory.getMainHandStack().decrement(1);
