@@ -35,6 +35,15 @@ public abstract class Pig extends net.minecraft.entity.Entity{
 	@Inject(method = "dropInventory", at = @At("HEAD"))
 	protected void dropInventory(CallbackInfo info) {
 		if (cargo !=null) {
+			if (cargo.size() ==27||cargo.size() ==54){
+				if (cargo.size() ==54){
+					this.dropItem(Items.CHEST);
+				}
+				this.dropItem(Items.CHEST);
+			}
+			if (cargo.size()==0){
+				this.dropItem(Items.ENDER_CHEST);
+			}
 			for (ItemStack item : cargo.clearToList()) {
 				this.dropStack(item);
 			}
