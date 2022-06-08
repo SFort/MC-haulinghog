@@ -10,7 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -68,7 +68,7 @@ public abstract class Pig extends net.minecraft.entity.Entity{
 				if (cargo.size()==0){
 					player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
 						return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, player.getEnderChestInventory());
-					}, new TranslatableText("container.enderchest")));
+					}, Text.translatable("container.enderchest")));
 				}
 				if (cargo.size()==27){
 					if (player.getInventory().getMainHandStack().getItem().equals(Items.CHEST)) {
@@ -85,12 +85,12 @@ public abstract class Pig extends net.minecraft.entity.Entity{
 					}
 					player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
 						return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, cargo);
-					}, new TranslatableText("container.chest")));
+					}, Text.translatable("container.chest")));
 				}
 				if (cargo.size()==54){
 					player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
 						return GenericContainerScreenHandler.createGeneric9x6(i, playerInventory, cargo);
-					}, new TranslatableText("container.chest")));
+					}, Text.translatable("container.chest")));
 				}
 			}
 			info.cancel();
